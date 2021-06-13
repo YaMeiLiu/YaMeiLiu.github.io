@@ -137,3 +137,14 @@ valine:
  notify: false #评论回复提醒
  avatar: mm #评论列表头像样式：''/mm/identicon/monsterid/wavatar/retro/hide
  placeholder: Just go go #评论框占位符
+
+ #7、添加浏览量
+leancloud_visitors:
+  enable: true
+  app_id: 3mBpRy5cawwUFqssFtsbpKc1-gzGzoHsz
+  app_key: Rt384vU8JTaD1rJj51Vg2G74
+
+#添加一下js插件的 CDN地址
+js_cdn:
+  jquery: https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js
+  av : //cdn1.lncld.net/static/js/2.5.0/av-min.js

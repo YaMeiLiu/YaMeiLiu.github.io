@@ -19,3 +19,14 @@
 <% if (theme.mathjax){ %>
 <%- partial('mathjax') %>
 <% } %>
+<script src="<%- theme.js_cdn.jquery %>"></script>
+
+<% if (theme.leancloud_visitors.enable){ %>
+<%- partial('post/leancloud') %> 
+<% } %>
+
+<%- partial('script') %>
+
+<% if (theme.mathjax){ %>
+<%- partial('mathjax') %>
+<% } %>
