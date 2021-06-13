@@ -5,6 +5,11 @@
         <%- partial('post/title', {class_name: 'article-title'}) %>
         <% if (!post.noDate){ %>
         <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
+        <!-- 开始添加字数统计-->
+        <% if(theme.word_count && !post.no_word_count){%>
+          <%- partial('post/word') %>
+          <% } %>
+        <!-- 添加完成 -->
         <% } %>
       </header>
     <% } %>
@@ -17,7 +22,76 @@
       <% } else { %>
         <%- post.content %>
       <% } %>
+      <% if ((theme.essayending_type === 2 || (theme.essayending_type === 1 && post.essayending)) && !index){ %>
+        <% if  (!index){ %>
+          <div class="essayending">
+            <div>
+             <div style="text-align:center;color: #ccc;font-size:19px;">
+             <br/>
+             <br/>
+             -------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------
+             <br/>
+             <br/>
+             </div>
+            </div>
+          </div>
+        <% } else {%>
+          <div class="essayending" hidden="hidden"></div>
+        <% } %>
+ 
+    <% } %>
+    <!- 百度自动推送方式提交 -->
+    <% if (1){ %>
+      <script>
+      (function(){
+          var bp = document.createElement('script');
+          var curProtocol = window.location.protocol.split(':')[0];
+          if (curProtocol === 'https') {
+              bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+          }
+          else {
+              bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+          }
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(bp, s);
+      })();
+      </script>
+    <% } %>
+    <!- 百度自动推送方式提交结束 -->
+      <!-- 增加版权声明 -->
+      <%
+      var sUrl = url.replace(/index\.html$/, '');
+      sUrl = /^(http:|https:)\/\//.test(sUrl) ? sUrl : 'https:' + sUrl;
+      %>
+      <% if ((theme.declare_type === 2 || (theme.declare_type === 1 && post.declare)) && !index){ %>
+      <div class="declare">
+        <strong>本文作者：</strong>
+        <% if(config.author != undefined){ %>
+          <%= config.author%>
+        <% }else{%>
+          <font color="red">请在博客根目录“_config.yml”中填入正确的“author”</font>
+        <%}%>
+        <br>
+        <strong class="update-time">最后更新：</strong>
+        <%- date(post.updated, 'YYYY-MM-DD') %>
+        <br>
+        <strong>本文链接：</strong>
+        <a href="<%= config.url %>/<%= post.path %>" title="<%= post.title %>" target="_blank"><%= config.url %>/<%= post.path %></a>
+        <br>
+        <strong>版权声明：</strong>
+        本作品采用
+        <a rel="license" href="<%= theme.licensee_url%>"><%= theme.licensee_name%></a>
+        进行许可。转载请注明出处！
+        <% if(theme.licensee_img != undefined){ %>
+          <br>
+          <a rel="license" href="<%= theme.licensee_url%>"><img alt="知识共享许可协议" style="border-width:0" src="<%= theme.licensee_img%>"/></a>
+        <% } %>
+      </div>
+      <% } else {%>
+      <div class="declare" hidden="hidden"></div>
+      <% } %>
 
+      <!-- 增加版权声明结束 -->
       <% if ((theme.reward_type === 2 || (theme.reward_type === 1 && post.reward)) && !index){ %>
         <div class="page-reward">
           <a href="javascript:;" class="page-reward-btn tooltip-top">

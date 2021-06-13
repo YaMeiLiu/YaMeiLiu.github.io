@@ -1,5 +1,5 @@
 # Header
-author: SArMg
+author: 心若冰清
 menu:
   主页: /
   随笔: /tags/随笔/
@@ -102,7 +102,7 @@ style:
   # 头像上面的背景颜色
   header: '#4d4d4d'
   # 右滑板块背景
-  slider: 'linear-gradient(200deg,#a0cfe4,#e8c37e)'
+  slider: 'linear-gradient(200deg,#a0cfe4,#70DB93)'
 
 # slider的设置
 slider:
@@ -148,3 +148,19 @@ leancloud_visitors:
 js_cdn:
   jquery: https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js
   av : //cdn1.lncld.net/static/js/2.5.0/av-min.js
+
+#版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明
+#当前应用的版权协议地址。
+#版权协议的名称
+#版权协议的Logo
+declare_type: 1
+licensee_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+licensee_name: '知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议'
+licensee_img: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png
+
+# 是否开启字数统计
+#不需要使用，直接设置值为false，或注释掉
+word_count: True
+
+#文章结束
+essayending_type: 2 #0关闭文章结束提示 2全开 1需要在文章开头加上 essayending: true

@@ -6,14 +6,14 @@
 title: myblog
 subtitle: 
 description: 
-keywords:
-author: SArMg
+keywords: 心若冰清，天塌不惊
+author: 心若冰清
 language: 
 timezone: 
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://YaMeiLiu.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -124,3 +124,4 @@ jsonContent:
       excerpt: false
       categories: false
       tags: true
+
