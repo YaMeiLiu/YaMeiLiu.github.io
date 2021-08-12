@@ -6,25 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://YaMeiLiu.github.io">
-  <title>Hello World | myblog</title>
+  <title>Archives: 2021/8 | myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目标检测中的NMS最近一直在做人脸检测的项目，其中有一个重要过程就是剔除冗余的目标框，该过程利用NMS(Non-Maximum Suppression)方法，最近整理出本人对NMS的理解内容，以及基于Python的实现，如有不对请指出。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://yameiliu.github.io/2021/06/12/NMS/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="myblog">
+<meta property="og:url" content="https://yameiliu.github.io/archives/2021/08/index.html">
 <meta property="og:site_name" content="myblog">
-<meta property="og:description" content="目标检测中的NMS最近一直在做人脸检测的项目，其中有一个重要过程就是剔除冗余的目标框，该过程利用NMS(Non-Maximum Suppression)方法，最近整理出本人对NMS的理解内容，以及基于Python的实现，如有不对请指出。">
 <meta property="og:locale">
-<meta property="og:image" content="https://yameiliu.github.io/2021/06/12/NMS/blog1_fig_1.png">
-<meta property="og:image" content="https://yameiliu.github.io/2021/06/12/NMS/blog1_fig_2.png">
-<meta property="og:image" content="https://yameiliu.github.io/2021/06/12/NMS/blog1_fig_3.jpg">
-<meta property="og:image" content="https://yameiliu.github.io/2021/06/12/NMS/blog1_fig_4.jpg">
-<meta property="article:published_time" content="2021-06-12T09:56:41.073Z">
-<meta property="article:modified_time" content="2021-08-12T14:14:13.540Z">
 <meta property="article:author" content="心若冰清">
-<meta property="article:tag" content="随笔">
+<meta property="article:tag" content="心若冰清，天塌不惊">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://yameiliu.github.io/2021/06/12/NMS/blog1_fig_1.png">
   
     <link rel="alternative" href="/atom.xml" title="myblog" type="application/atom+xml">
   
@@ -166,318 +157,54 @@
           </div>
           <div id="js-content" class="content-ll">
             
-    <i class="fa fa-thumb-tack"></i>
-    <font color=7D26CD>置顶</font>
-    <span class="post-meta-divider">|</span>
   
-<article id="post-NMS" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/08/11/test-img/" class="archive-article-date">
+  	<time datetime="2021-08-11T15:44:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-11</time>
+</a>
+        </div>
+    	 
   
-    <h1 class="article-title" itemprop="name">
-      Hello World
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/08/11/test-img/">test_img</a>
     </h1>
   
 
 
   <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2021/06/12/NMS/" class="pageViews">0</span>次
+      <i class="icon-smile icon"></i> 阅读数:<span id="/2021/08/11/test-img/" class="pageViews">0</span>次
   </a>
 
 
-        
-        <a href="/2021/06/12/NMS/" class="archive-article-date">
-  	<time datetime="2021-06-12T09:56:41.073Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-12</time>
-</a>
-        <!-- 开始添加字数统计-->
-        
-          <div style="color: rgb(168, 167, 167);margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.4k字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">6分</span>
-      </span>
-    </span>
-</div>
+        <div class="article-info info-on-right">
           
-        <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="目标检测中的NMS"><a href="#目标检测中的NMS" class="headerlink" title="目标检测中的NMS"></a>目标检测中的NMS</h1><p>最近一直在做人脸检测的项目，其中有一个重要过程就是剔除冗余的目标框，该过程利用NMS(Non-Maximum Suppression)方法，最近整理出本人对NMS的理解内容，以及基于Python的实现，如有不对请指出。</p>
-<span id="more"></span>
-<p>非极大值抑制(Non-Maximum Suppression, NMS),就是抑制不是极大值的元素，多用于目标检测中。一般来说，在目标检测算法输出目标框时，目标框会非常多，其中会有很多重复的框定位到同一个目标上，NMS的作用就是去除冗余框，为每一个目标得到唯一的检测框，如下图所示。<br><img src="/2021/06/12/NMS/blog1_fig_1.png" alt="fig.1"></p>
-<h3 id="1、标准的NMS"><a href="#1、标准的NMS" class="headerlink" title="1、标准的NMS"></a>1、标准的NMS</h3><p>标准NMS的做法将检测框按得分排序，然后保留得分最高的框，同时删除与该框重叠面积大于一定阈值的其他框。具体的算法流程：</p>
-<p><img src="/2021/06/12/NMS/blog1_fig_2.png" alt="fig.2"></p>
-<p>Python实现：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">py_cpu_nms</span>(<span class="params">dets,thresh</span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    dets：[[xmin,ymin,xmax,ymax,scores],...]</span></span><br><span class="line"><span class="string">    thresh：iou 阈值</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    x1=dets[:,<span class="number">0</span>]</span><br><span class="line">    y1=dets[:,<span class="number">1</span>]</span><br><span class="line">    x2=dets[:,<span class="number">2</span>]</span><br><span class="line">    y2=dets[:,<span class="number">3</span>]</span><br><span class="line">    areas=(x2-x1+<span class="number">1</span>)*(y2-y1+<span class="number">1</span>)</span><br><span class="line">    scores=dets[:,<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">    keep=[]  <span class="comment">#存放nms剩余的方框</span></span><br><span class="line"></span><br><span class="line">    index=scores.argsort()[::-<span class="number">1</span>]</span><br><span class="line">    <span class="built_in">print</span>(index)</span><br><span class="line">    <span class="keyword">while</span> index.size&gt;<span class="number">0</span>:</span><br><span class="line">        <span class="built_in">print</span>(index.size)</span><br><span class="line">        i=index[<span class="number">0</span>]</span><br><span class="line">        keep.append(i)</span><br><span class="line">        </span><br><span class="line">        x11 = np.maximum(x1[i], x1[index[<span class="number">1</span>:]])    <span class="comment"># calculate the points of overlap </span></span><br><span class="line">        y11 = np.maximum(y1[i], y1[index[<span class="number">1</span>:]])</span><br><span class="line">        x22 = np.minimum(x2[i], x2[index[<span class="number">1</span>:]])</span><br><span class="line">        y22 = np.minimum(y2[i], y2[index[<span class="number">1</span>:]])</span><br><span class="line">        </span><br><span class="line">        w=np.maximum(<span class="number">0</span>,x22-x11+<span class="number">1</span>)</span><br><span class="line">        h=np.maximum(<span class="number">0</span>,y22-x11+<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        overlaps = w*h</span><br><span class="line"></span><br><span class="line">        ious=overlaps / (areas[i]+areas[index[<span class="number">1</span>:]]-overlaps)        </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;ious is :&quot;</span>,ious)</span><br><span class="line"></span><br><span class="line">        idx=np.where(ious&lt;thresh)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        index=index[idx+<span class="number">1</span>]</span><br><span class="line">        <span class="built_in">print</span>(index)</span><br><span class="line">    <span class="keyword">return</span> keep</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="2、soft-NMS："><a href="#2、soft-NMS：" class="headerlink" title="2、soft NMS："></a>2、soft NMS：</h3><p>论文：<a target="_blank" rel="noopener" href="http://cn.arxiv.org/abs/1704.04503">Improving Object Detection With One Line of Code</a></p>
-<p>提出soft NMS的作者认为，标准NMS会存在如下图所示的问题，红色框和绿色框是当前的检测结果，二者的得分分别是0.95和0.80。如果按照传统的NMS进行处理，首先选中得分最高的红色框，然后绿色框就会因为与之重叠面积过大而被删掉。另一方面，NMS的阈值也不太容易确定，设小了会出现下图的情况（绿色框因为和红色框重叠面积较大而被删掉），设置过高又容易增大误检。</p>
-<p><img src="/2021/06/12/NMS/blog1_fig_3.jpg"></p>
-<p>soft NMS思想：不要删除所有IOU大于阈值的框，而是降低其置信度。具体的算法流程：</p>
-<p><img src="/2021/06/12/NMS/blog1_fig_4.jpg"></p>
-<p>Python实现：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cpu_soft_nms</span>(<span class="params">boxes, sigma=<span class="number">0.5</span>, Nt=<span class="number">0.3</span>, threshold=<span class="number">0.1</span>, method=<span class="number">2</span></span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    boxes：[[xmin,ymin,xmax,ymax,scores],...]</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    N = boxes.shape[<span class="number">0</span>]</span><br><span class="line"> </span><br><span class="line">    pos = <span class="number">0</span></span><br><span class="line">    maxscore = <span class="number">0</span></span><br><span class="line">    maxpos = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(N):</span><br><span class="line">        <span class="comment"># 用冒泡排序法找到分数最高的预测框，并将该预测框放在第i个位置</span></span><br><span class="line">        maxscore = boxes[i, <span class="number">4</span>]</span><br><span class="line">        maxpos = i</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 先用一些中间变量存储第i个预测框</span></span><br><span class="line">        tx1 = boxes[i,<span class="number">0</span>]</span><br><span class="line">        ty1 = boxes[i,<span class="number">1</span>]</span><br><span class="line">        tx2 = boxes[i,<span class="number">2</span>]</span><br><span class="line">        ty2 = boxes[i,<span class="number">3</span>]</span><br><span class="line">        ts = boxes[i,<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">        pos = i + <span class="number">1</span></span><br><span class="line">        <span class="comment"># get max box</span></span><br><span class="line">        <span class="keyword">while</span> pos &lt; N:</span><br><span class="line">            <span class="keyword">if</span> maxscore &lt; boxes[pos, <span class="number">4</span>]:</span><br><span class="line">                maxscore = boxes[pos, <span class="number">4</span>]</span><br><span class="line">                maxpos = pos</span><br><span class="line">            pos = pos + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">	    <span class="comment"># 将分数最高的预测框M放在第i个位置</span></span><br><span class="line">        boxes[i,<span class="number">0</span>] = boxes[maxpos,<span class="number">0</span>]</span><br><span class="line">        boxes[i,<span class="number">1</span>] = boxes[maxpos,<span class="number">1</span>]</span><br><span class="line">        boxes[i,<span class="number">2</span>] = boxes[maxpos,<span class="number">2</span>]</span><br><span class="line">        boxes[i,<span class="number">3</span>] = boxes[maxpos,<span class="number">3</span>]</span><br><span class="line">        boxes[i,<span class="number">4</span>] = boxes[maxpos,<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">	    <span class="comment"># 将原先第i个预测框放在分数最高的位置</span></span><br><span class="line">        boxes[maxpos,<span class="number">0</span>] = tx1</span><br><span class="line">        boxes[maxpos,<span class="number">1</span>] = ty1</span><br><span class="line">        boxes[maxpos,<span class="number">2</span>] = tx2</span><br><span class="line">        boxes[maxpos,<span class="number">3</span>] = ty2</span><br><span class="line">        boxes[maxpos,<span class="number">4</span>] = ts</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 程序到此实现了：寻找第i至第N个预测框中分数最高的框，并将其与第i个预测框互换位置。</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 预测框M，前缀&quot;t&quot;表示target</span></span><br><span class="line">        tx1 = boxes[i,<span class="number">0</span>]</span><br><span class="line">        ty1 = boxes[i,<span class="number">1</span>]</span><br><span class="line">        tx2 = boxes[i,<span class="number">2</span>]</span><br><span class="line">        ty2 = boxes[i,<span class="number">3</span>]</span><br><span class="line">        ts = boxes[i,<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">	    <span class="comment"># 下面针对M进行NMS迭代过程，</span></span><br><span class="line">        <span class="comment"># 需要注意的是，如果soft-NMS将score削弱至某阈值threshold以下，则将其删除掉</span></span><br><span class="line">        <span class="comment"># 在程序中体现为，将要删除的框放在了最后，并使 N = N-1</span></span><br><span class="line">        pos = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> pos &lt; N:</span><br><span class="line">            x1 = boxes[pos, <span class="number">0</span>]</span><br><span class="line">            y1 = boxes[pos, <span class="number">1</span>]</span><br><span class="line">            x2 = boxes[pos, <span class="number">2</span>]</span><br><span class="line">            y2 = boxes[pos, <span class="number">3</span>]</span><br><span class="line">            s = boxes[pos, <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">            area = (x2 - x1 + <span class="number">1</span>) * (y2 - y1 + <span class="number">1</span>)</span><br><span class="line">            iw = (<span class="built_in">min</span>(tx2, x2) - <span class="built_in">max</span>(tx1, x1) + <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">if</span> iw &gt; <span class="number">0</span>:</span><br><span class="line">                ih = (<span class="built_in">min</span>(ty2, y2) - <span class="built_in">max</span>(ty1, y1) + <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">if</span> ih &gt; <span class="number">0</span>:</span><br><span class="line">                    ua = <span class="built_in">float</span>((tx2 - tx1 + <span class="number">1</span>) * (ty2 - ty1 + <span class="number">1</span>) + area - iw * ih)</span><br><span class="line">                    ov = iw * ih / ua  <span class="comment"># iou between max box and detection box</span></span><br><span class="line"></span><br><span class="line">                    <span class="keyword">if</span> method == <span class="number">1</span>:  <span class="comment"># linear</span></span><br><span class="line">                        <span class="keyword">if</span> ov &gt; Nt: </span><br><span class="line">                            weight = <span class="number">1</span> - ov</span><br><span class="line">                        <span class="keyword">else</span>:</span><br><span class="line">                            weight = <span class="number">1</span></span><br><span class="line">                    <span class="keyword">elif</span> method == <span class="number">2</span>:  <span class="comment"># gaussian</span></span><br><span class="line">                        weight = np.exp(-(ov * ov)/sigma)</span><br><span class="line">                    <span class="keyword">else</span>:  <span class="comment"># original NMS</span></span><br><span class="line">                        <span class="keyword">if</span> ov &gt; Nt: </span><br><span class="line">                            weight = <span class="number">0</span></span><br><span class="line">                        <span class="keyword">else</span>:</span><br><span class="line">                            weight = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">                    boxes[pos, <span class="number">4</span>] = weight*boxes[pos, <span class="number">4</span>]</span><br><span class="line">		    </span><br><span class="line">		            <span class="comment"># if box score falls below threshold, discard the box by swapping with last box</span></span><br><span class="line">		            <span class="comment"># update N</span></span><br><span class="line">                    <span class="keyword">if</span> boxes[pos, <span class="number">4</span>] &lt; threshold:</span><br><span class="line">                        boxes[pos,<span class="number">0</span>] = boxes[N-<span class="number">1</span>, <span class="number">0</span>]</span><br><span class="line">                        boxes[pos,<span class="number">1</span>] = boxes[N-<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">                        boxes[pos,<span class="number">2</span>] = boxes[N-<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">                        boxes[pos,<span class="number">3</span>] = boxes[N-<span class="number">1</span>, <span class="number">3</span>]</span><br><span class="line">                        boxes[pos,<span class="number">4</span>] = boxes[N-<span class="number">1</span>, <span class="number">4</span>]</span><br><span class="line">                        N = N - <span class="number">1</span></span><br><span class="line">                        pos = pos - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">            pos = pos + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    keep = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(N)]</span><br><span class="line">    <span class="keyword">return</span> keep</span><br></pre></td></tr></table></figure>
+          
 
-<h3 id="2、weighted-NMS："><a href="#2、weighted-NMS：" class="headerlink" title="2、weighted NMS："></a>2、weighted NMS：</h3><p>加权NMS认为传统NMS每次迭代所选出的最大得分框未必是精确定位的，冗余框也有可能是定位良好的。那么与直接剔除机制不同而是根据网络预测的置信度进行加权，得到新的目标框，把该目标框作为最终的目标框，再将其他框剔除。<br>具体的算法流程：</p>
-<!-- ![](./../img/blog1_fig_4.jpg) -->
-
-<p>Python实现：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">py_weighted_nms</span>(<span class="params">dets, thresh</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Takes bounding boxes and scores and a threshold and applies </span></span><br><span class="line"><span class="string">    weighted non-maximal suppression.</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">    dets：[[xmin,ymin,xmax,ymax,scores],...]</span></span><br><span class="line"><span class="string">    thresh：iou 阈值</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    scores = dets[:, <span class="number">4</span>]</span><br><span class="line">    x1 = dets[:, <span class="number">0</span>]</span><br><span class="line">    y1 = dets[:, <span class="number">1</span>]</span><br><span class="line">    x2 = dets[:, <span class="number">2</span>]</span><br><span class="line">    y2 = dets[:, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">    areas = (x2 - x1) * (y2 - y1)</span><br><span class="line">    order = scores.argsort()[::-<span class="number">1</span>]</span><br><span class="line">    dets =dets[order]</span><br><span class="line">    max_ids = []</span><br><span class="line">    weighted_boxes = []</span><br><span class="line">    <span class="keyword">while</span> order.size &gt; <span class="number">0</span>:</span><br><span class="line">        i = order[<span class="number">0</span>]</span><br><span class="line">        max_ids.append(i)</span><br><span class="line">        xx1 = np.maximum(x1[i], x1[order[:]])</span><br><span class="line">        yy1 = np.maximum(y1[i], y1[order[:]])</span><br><span class="line">        xx2 = np.minimum(x2[i], x2[order[:]])</span><br><span class="line">        yy2 = np.minimum(y2[i], y2[order[:]])</span><br><span class="line"></span><br><span class="line">        w = np.maximum(<span class="number">0.0</span>, xx2 - xx1)</span><br><span class="line">        h = np.maximum(<span class="number">0.0</span>, yy2 - yy1)</span><br><span class="line">        inter = w * h</span><br><span class="line">        iou = inter / (areas[i] + areas[order[:]] - inter)</span><br><span class="line"></span><br><span class="line">        in_inds = np.where(iou &gt;= thresh)[<span class="number">0</span>]</span><br><span class="line">        </span><br><span class="line">        in_dets = dets[in_inds, :]</span><br><span class="line"></span><br><span class="line">        weights = in_dets[:, <span class="number">4</span>] * iou[in_inds]</span><br><span class="line">        wbox = np.<span class="built_in">sum</span>((in_dets[:, :<span class="number">4</span>] * weights[..., np.newaxis]), axis=<span class="number">0</span>) \</span><br><span class="line">            / np.<span class="built_in">sum</span>(weights)</span><br><span class="line">        weighted_boxes.append(wbox)</span><br><span class="line"></span><br><span class="line">        out_inds = np.where(iou &lt; thresh)[<span class="number">0</span>]</span><br><span class="line">        order = order[out_inds]</span><br><span class="line">        dets = dets[out_inds]</span><br><span class="line">    scores_frinally=scores[max_ids]</span><br><span class="line">    <span class="keyword">return</span> max_ids,scores_frinally, np.array(weighted_boxes)</span><br></pre></td></tr></table></figure>
-<p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/110256988">目标检测中的NMS</a></p>
-
-      
-      
-        
-          <div class="essayending">
-            <div>
-             <div style="text-align:center;color: #ccc;font-size:19px;">
-             <br/>
-             <br/>
-             -------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------
-             <br/>
-             <br/>
-             </div>
-            </div>
-          </div>
-        
- 
-    
-    <!- 百度自动推送方式提交 -->
-    
-      <script>
-      (function(){
-          var bp = document.createElement('script');
-          var curProtocol = window.location.protocol.split(':')[0];
-          if (curProtocol === 'https') {
-              bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-          }
-          else {
-              bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-          }
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(bp, s);
-      })();
-      </script>
-    
-    <!- 百度自动推送方式提交结束 -->
-      <!-- 增加版权声明 -->
-      
-      
-      <div class="declare" hidden="hidden"></div>
-      
-
-      <!-- 增加版权声明结束 -->
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/wechat.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://YaMeiLiu.github.iohub.io/2021/06/12/NMS/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2021/06/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          我的第一篇博客文章
-        
-      </div>
-    </a>
   
   
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84NMS"><span class="toc-number">1.</span> <span class="toc-text">目标检测中的NMS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%A0%87%E5%87%86%E7%9A%84NMS"><span class="toc-number">1.0.1.</span> <span class="toc-text">1、标准的NMS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81soft-NMS%EF%BC%9A"><span class="toc-number">1.0.2.</span> <span class="toc-text">2、soft NMS：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81weighted-NMS%EF%BC%9A"><span class="toc-number">1.0.3.</span> <span class="toc-text">2、weighted NMS：</span></a></li></ol></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-
-
-	
-	    <section id="comments" class="comments">
-	      <style>
-	        .comments{margin:30px;padding:10px;background:#fff}
-	        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-	      </style>
-	      <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-    var notify = 'false' == true ? true : false;
-    var verify = 'false' == true ? true : false;
-    new Valine({
-        av: AV,
-        el: '#vcomment',
-        notify: notify,
-        app_id: "3mBpRy5cawwUFqssFtsbpKc1-gzGzoHsz",
-        app_key: "Rt384vU8JTaD1rJj51Vg2G74",
-        placeholder: "Just go go",
-        avatar:"mm",
-    });
-</script>
-	  </section>
-	
+    
 
 
           </div>
@@ -504,8 +231,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
