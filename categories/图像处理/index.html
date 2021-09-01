@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://YaMeiLiu.github.io">
-  <title>myblog</title>
+  <title>Category: 图像处理 | myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="myblog">
-<meta property="og:url" content="https://yameiliu.github.io/index.html">
+<meta property="og:url" content="https://yameiliu.github.io/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="myblog">
 <meta property="og:locale">
 <meta property="article:author" content="心若冰清">
@@ -164,14 +164,29 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-目标检测中的NMS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/06/13/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84NMS/" class="archive-article-date">
+  	<time datetime="2021-06-12T17:06:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-13</time>
+</a>
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/13/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84NMS/">目标检测中的NMS</a>
+      <a class="archive-article-title" href="/2021/06/13/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84NMS/">目标检测中的NMS</a>
     </h1>
   
 
@@ -181,80 +196,9 @@
   </a>
 
 
-        
-        <a href="/2021/06/13/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84NMS/" class="archive-article-date">
-  	<time datetime="2021-06-12T17:06:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-13</time>
-</a>
-        <!-- 开始添加字数统计-->
-        
-          <div style="color: rgb(168, 167, 167);margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.8k字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">8分</span>
-      </span>
-    </span>
-</div>
+        <div class="article-info info-on-right">
           
-        <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近一直在做人脸检测的项目，其中有一个重要过程就是剔除冗余的目标框，该过程利用NMS(Non-Maximum Suppression)方法，最近整理出本人对NMS的理解内容，以及基于Python的实现，如有不对请指出。</p>
-<p>非极大值抑制(Non-Maximum Suppression, NMS),就是抑制不是极大值的元素，多用于目标检测中。一般来说，在目标检测算法输出目标框时，目标框会非常多，其中会有很多重复的框定位到同一个目标上，NMS的作用就是去除冗余框，为每一个目标得到唯一的检测框，</p>
-        
-          <a class="article-more-a" href="/2021/06/13/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84NMS/#more">more >></a>
-        
-      
-      
-    <!- 百度自动推送方式提交 -->
-    
-      <script>
-      (function(){
-          var bp = document.createElement('script');
-          var curProtocol = window.location.protocol.split(':')[0];
-          if (curProtocol === 'https') {
-              bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-          }
-          else {
-              bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-          }
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(bp, s);
-      })();
-      </script>
-    
-    <!- 百度自动推送方式提交结束 -->
-      <!-- 增加版权声明 -->
-      
-      
-      <div class="declare" hidden="hidden"></div>
-      
-
-      <!-- 增加版权声明结束 -->
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
-      
-      
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -271,40 +215,17 @@
 	</div>
 
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/13/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84NMS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
   
   
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -330,11 +251,11 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
 		isTag: false,
-		isCategory: false,
+		isCategory: true,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
