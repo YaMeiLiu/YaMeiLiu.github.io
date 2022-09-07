@@ -1,9 +1,11 @@
 # Header
-author: 心若冰清
+author: CaptianSArMg
 menu:
   主页: /
+  分类: /categories
   随笔: /tags/随笔/
   归档: /archives/index.html
+  
 # SubNav
 subnav:
   #github: "#"
@@ -47,7 +49,7 @@ reward_type: 2
 # 打赏wording
 reward_wording: '谢谢你请我吃糖果'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
-alipay: /assets/alipay.jpg
+# alipay: /assets/alipay.jpg
 # 微信二维码图片地址
 weixin: /assets/wechat.jpg
 
@@ -140,7 +142,7 @@ valine:
 
  #7、添加浏览量
 leancloud_visitors:
-  enable: true
+  enable: True
   app_id: 3mBpRy5cawwUFqssFtsbpKc1-gzGzoHsz
   app_key: Rt384vU8JTaD1rJj51Vg2G74
 
