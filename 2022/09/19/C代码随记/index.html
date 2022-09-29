@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://YaMeiLiu.github.io">
-  <title>myblog</title>
+  <title>C代码随记 | myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="myblog">
-<meta property="og:url" content="https://yameiliu.github.io/index.html">
+  <meta name="description" content="1、static_cast C++强制类型转换操作符 是一种显示转换，就是告诉编译器，这种损失精度是在已知的情况下进行的；例如下面的a&#x3D;b则为隐式转换；当编译器执行隐式转换时，会有一个warning，提示可能存在精度损失。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C代码随记">
+<meta property="og:url" content="https://yameiliu.github.io/2022/09/19/C%E4%BB%A3%E7%A0%81%E9%9A%8F%E8%AE%B0/index.html">
 <meta property="og:site_name" content="myblog">
+<meta property="og:description" content="1、static_cast C++强制类型转换操作符 是一种显示转换，就是告诉编译器，这种损失精度是在已知的情况下进行的；例如下面的a&#x3D;b则为隐式转换；当编译器执行隐式转换时，会有一个warning，提示可能存在精度损失。">
 <meta property="og:locale">
+<meta property="article:published_time" content="2022-09-19T02:24:43.000Z">
+<meta property="article:modified_time" content="2022-09-29T12:02:45.880Z">
 <meta property="article:author" content="心若冰清">
 <meta property="article:tag" content="心若冰清，天塌不惊">
 <meta name="twitter:card" content="summary">
@@ -163,289 +167,14 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-    <article id="post-目标检测中的NMS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+<article id="post-C代码随记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/13/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84NMS/">目标检测中的NMS</a>
-    </h1>
-  
-
-
-
-        
-        <a href="/2021/06/13/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84NMS/" class="archive-article-date">
-  	<time datetime="2021-06-12T17:06:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-13</time>
-</a>
-        <!-- 开始添加字数统计-->
-        
-          <div style="color: rgb(168, 167, 167);margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.8k字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">8分</span>
-      </span>
-    </span>
-</div>
-          
-        <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近一直在做人脸检测的项目，其中有一个重要过程就是剔除冗余的目标框，该过程利用NMS(Non-Maximum Suppression)方法，最近整理出本人对NMS的理解内容，以及基于Python的实现，如有不对请指出。🍂🍂🍂</p>
-<p>非极大值抑制(Non-Maximum Suppression, NMS),就是抑制不是极大值的元素，多用于目标检测中。一般来说，在目标检测算法输出目标框时，目标框会非常多，其中会有很多重复的框定位到同一个目标上，NMS的作用就是去除冗余框，为每一个目标得到唯一的检测框，</p>
-        
-          <a class="article-more-a" href="/2021/06/13/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84NMS/#more">more >></a>
-        
-      
-      
-    <!- 百度自动推送方式提交 -->
-    
-      <script>
-      (function(){
-          var bp = document.createElement('script');
-          var curProtocol = window.location.protocol.split(':')[0];
-          if (curProtocol === 'https') {
-              bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-          }
-          else {
-              bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-          }
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(bp, s);
-      })();
-      </script>
-    
-    <!- 百度自动推送方式提交结束 -->
-      <!-- 增加版权声明 -->
-      
-      
-      <div class="declare" hidden="hidden"></div>
-      
-
-      <!-- 增加版权声明结束 -->
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/图像处理//" class="article-tag-list-link color5">图像处理</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/图像处理/目标检测//" class="article-tag-list-link color5">目标检测</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/13/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84NMS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-python代码随记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/28/python%E4%BB%A3%E7%A0%81%E9%9A%8F%E8%AE%B0/">python代码随记</a>
-    </h1>
-  
-
-
-
-        
-        <a href="/2022/09/28/python%E4%BB%A3%E7%A0%81%E9%9A%8F%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2022-09-28T06:49:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-28</time>
-</a>
-        <!-- 开始添加字数统计-->
-        
-          <div style="color: rgb(168, 167, 167);margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">42字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-          
-        <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="1、-getitem-方法">1、__ getitem __ 方法</h5>
-<p>如果类中定义了__ getitem __ 方法，那么他的实例对象，例如P，可以通过key值取结果，例如P[key];</p>
-        
-          <a class="article-more-a" href="/2022/09/28/python%E4%BB%A3%E7%A0%81%E9%9A%8F%E8%AE%B0/#more">more >></a>
-        
-      
-      
-    <!- 百度自动推送方式提交 -->
-    
-      <script>
-      (function(){
-          var bp = document.createElement('script');
-          var curProtocol = window.location.protocol.split(':')[0];
-          if (curProtocol === 'https') {
-              bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-          }
-          else {
-              bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-          }
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(bp, s);
-      })();
-      </script>
-    
-    <!- 百度自动推送方式提交结束 -->
-      <!-- 增加版权声明 -->
-      
-      
-      <div class="declare" hidden="hidden"></div>
-      
-
-      <!-- 增加版权声明结束 -->
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/28/python%E4%BB%A3%E7%A0%81%E9%9A%8F%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-C代码随记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/19/C%E4%BB%A3%E7%A0%81%E9%9A%8F%E8%AE%B0/">C代码随记</a>
+    <h1 class="article-title" itemprop="name">
+      C代码随记
     </h1>
   
 
@@ -483,12 +212,28 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h5 id="1、static-cast-C-强制类型转换操作符">1、static_cast C++强制类型转换操作符</h5>
-<p>是一种显示转换，就是告诉编译器，这种损失精度是在已知的情况下进行的；例如下面的a=b则为隐式转换；当编译器执行隐式转换时，会有一个warning，提示可能存在精度损失。</p>
-        
-          <a class="article-more-a" href="/2022/09/19/C%E4%BB%A3%E7%A0%81%E9%9A%8F%E8%AE%B0/#more">more >></a>
-        
+<p>是一种显示转换，就是告诉编译器，这种损失精度是在已知的情况下进行的；例如下面的a=b则为隐式转换；当编译器执行隐式转换时，会有一个warning，提示可能存在精度损失。<span id="more"></span></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> a = <span class="number">1.99</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="keyword">static_cast</span>&lt;<span class="keyword">double</span>&gt;(a); <span class="comment">//相当于a = b；</span></span><br></pre></td></tr></table></figure>
+<p>使用static_cast 可以找回存放void* 指针中的值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> a = <span class="number">1.99</span>;</span><br><span class="line"><span class="keyword">void</span> * vptr = &amp;a;</span><br><span class="line"><span class="keyword">double</span> * dptr = <span class="keyword">static_cast</span>&lt;<span class="keyword">double</span>*&gt; vptr;</span><br><span class="line">std::cout&lt;&lt;*dptr&lt;&lt;std::endl;</span><br></pre></td></tr></table></figure>
+
       
       
+        
+          <div class="essayending">
+            <div>
+             <div style="text-align:center;color: #ccc;font-size:19px;">
+             <br/>
+             <br/>
+             -------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------
+             <br/>
+             <br/>
+             </div>
+            </div>
+          </div>
+        
+ 
+    
     <!- 百度自动推送方式提交 -->
     
       <script>
@@ -514,6 +259,32 @@
       
 
       <!-- 增加版权声明结束 -->
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -533,276 +304,84 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/19/C%E4%BB%A3%E7%A0%81%E9%9A%8F%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
 
       
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-VS-code环境设置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/29/VS-code%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/">VS code环境设置</a>
-    </h1>
-  
-
-
-
-        
-        <a href="/2022/08/29/VS-code%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2022-08-29T08:07:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-29</time>
-</a>
-        <!-- 开始添加字数统计-->
-        
-          <div style="color: rgb(168, 167, 167);margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">271字</span>
-      </span>
+      </div>
     </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
+  </div>
 </div>
-          
-        <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="给VS-code-配置临时环境">给VS code 配置临时环境</h3>
-<p>经常用vs code开放python项目，如果调试远程服务器的项目时，常用做法是在终端配置环境变量，然后在终端运行程序，通过 pdb 库调试，查看中间结果，个人觉得很不方便，本文介绍一下通过launch.json配置环境，可以进行debug调试</p>
-        
-          <a class="article-more-a" href="/2022/08/29/VS-code%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/#more">more >></a>
-        
-      
-      
-    <!- 百度自动推送方式提交 -->
-    
-      <script>
-      (function(){
-          var bp = document.createElement('script');
-          var curProtocol = window.location.protocol.split(':')[0];
-          if (curProtocol === 'https') {
-              bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-          }
-          else {
-              bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-          }
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(bp, s);
-      })();
-      </script>
-    
-    <!- 百度自动推送方式提交结束 -->
-      <!-- 增加版权声明 -->
-      
-      
-      <div class="declare" hidden="hidden"></div>
-      
 
-      <!-- 增加版权声明结束 -->
-      
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://YaMeiLiu.github.iohub.io/2022/09/19/C%E4%BB%A3%E7%A0%81%E9%9A%8F%E8%AE%B0/" alt="微信分享二维码">
     </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/工具//" class="article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/29/VS-code%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="hla-face:-HLA-Face阅读笔记" class="article article-type-hla-face:  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/04/HLA-Face%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">HLA-Face 阅读笔记</a>
-    </h1>
-  
-
-
-
-        
-        <a href="/2021/09/04/HLA-Face%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2021-09-04T11:38:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-04</time>
-</a>
-        <!-- 开始添加字数统计-->
-        
-          <div style="color: rgb(168, 167, 167);margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">2.8k字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">10分</span>
-      </span>
-    </span>
 </div>
-          
-        <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2104.01984v1">HLA-Face: Joint High-Low Adaptation for Low Light Face Detection</a> 收录于CVPR2021，提升弱光环境人脸的检出率。</p>
-<p><a target="_blank" rel="noopener" href="https://daooshee.github.io/HLA-Face-Website/">源代码</a></p>
-<h3 id="摘要">摘要</h3>
-<p>弱光环境下的人脸检测在现实中有着非常重要的应用，如夜间监控视频和自动驾驶等。目前多数人脸检测强依赖于大量的标注，而制作标准数据是非常费时费力的，为了减少制作弱光条件下建立新数据的负担，作者利用现有的正常光下的数据，探索如何适应正常光到弱光下的人脸检测。该任务的难点在于：正常光场景和弱光场景存在巨大且复杂的差异，现有的弱光增强和自适应方式不能达到很好的效果，因为，作者提出了一种联合高低适应（High-Low Adaptation ，HLA) ）框架，具体地，通过一个双向的low-level适应和多任务high-level适应，HLA在没有弱光标签进行训练的情况下，达到了最优效果。</p>
-        
-          <a class="article-more-a" href="/2021/09/04/HLA-Face%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/#more">more >></a>
-        
-      
-      
-    <!- 百度自动推送方式提交 -->
-    
-      <script>
-      (function(){
-          var bp = document.createElement('script');
-          var curProtocol = window.location.protocol.split(':')[0];
-          if (curProtocol === 'https') {
-              bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-          }
-          else {
-              bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-          }
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(bp, s);
-      })();
-      </script>
-    
-    <!- 百度自动推送方式提交结束 -->
-      <!-- 增加版权声明 -->
-      
-      
-      <div class="declare" hidden="hidden"></div>
-      
 
-      <!-- 增加版权声明结束 -->
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/图像处理//" class="article-tag-list-link color5">图像处理</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/图像处理/目标检测//" class="article-tag-list-link color5">目标检测</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/04/HLA-Face%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2022/09/28/python%E4%BB%A3%E7%A0%81%E9%9A%8F%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          python代码随记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/08/29/VS-code%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">VS code环境设置</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -817,15 +396,60 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#1%E3%80%81static-cast-C-%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-number">1.</span> <span class="toc-text">1、static_cast C++强制类型转换操作符</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
 
-
-
   
   
+  
+
+  
+
+  
+
+  
+
+
+	
+	    <section id="comments" class="comments">
+	      <style>
+	        .comments{margin:30px;padding:10px;background:#fff}
+	        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+	      </style>
+	      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    var notify = 'false' == true ? true : false;
+    var verify = 'false' == true ? true : false;
+    new Valine({
+        av: AV,
+        el: '#vcomment',
+        notify: notify,
+        app_id: "3mBpRy5cawwUFqssFtsbpKc1-gzGzoHsz",
+        app_key: "Rt384vU8JTaD1rJj51Vg2G74",
+        placeholder: "Just go go",
+        avatar:"mm",
+    });
+</script>
+	  </section>
+	
 
 
           </div>
@@ -851,8 +475,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
